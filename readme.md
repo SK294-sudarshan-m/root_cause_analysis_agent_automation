@@ -11,9 +11,8 @@ JSON Claim Summary Analyzer is a Python utility that processes one or multiple i
 * Filters and processes only records where `case_verdict = 0`.
 * Generates a consolidated Excel report containing claim information.
 * Groups semantically similar claim summaries into meaningful categories using sentence embeddings.
-* Creates specific reason categories based on the underlying issue rather than exact text matching.
+* Creates specific reason categories based on the underlying issue using cosine similarity and matching sematic meaning.
 * Ranks categories according to the number of occurrences.
-* Works completely offline without requiring any API keys or external services.
 
 ## Output
 
@@ -53,7 +52,7 @@ pip install pandas numpy sentence-transformers scikit-learn openpyxl torch
 2. Run the script:
 
 ```bash
-python case_verdict_most_common_reason_finder.py.py
+python case_verdict_most_common_reason_finder.py
 ```
 
 3. The generated Excel report (`case_summary.xlsx`) will contain the extracted claim information along with semantic categorization, category count, and category ranking.
